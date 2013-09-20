@@ -16,7 +16,7 @@ module Defensive
   end
 
   def act_defensively(enemy)
-    @history.push('defense')
+    $history.push('defense')
     return dance unless enemy
     return dodge enemy if enemy.can_fire_at? me
     return rest unless my.ammo_full?

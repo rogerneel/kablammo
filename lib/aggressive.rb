@@ -20,7 +20,7 @@ module Aggressive
   end
 
   def act_aggressively(enemy)
-    @history.push('offense')
+    $history.push('offense')
     return hunt unless enemy
     return rest if my.ammo == 0
     return move_towards! enemy if obscured? enemy
