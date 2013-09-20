@@ -10,7 +10,7 @@ on_turn do
 end
 
 def handle_turn
-  if my.ammo >= 1 || ($history.length > 1 && $history[-1] == 'defense' && $history[-2] == 'defense')
+  if my.ammo >= 1 || ($history.length > 2 && $history[-1] == 'defense' && $history[-2] == 'defense')
     act_aggressively target_enemy
   else
     act_defensively target_enemy
