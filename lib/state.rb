@@ -5,7 +5,7 @@ class State
   end
   
   def save_battle(battle, me)
-    @history << BattleState.new battle
+    @history << BattleState.new(battle)
     @my_name = me.username
   end
   
