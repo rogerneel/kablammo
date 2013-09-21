@@ -1,12 +1,10 @@
 class State
   def initialize
     @history = []
-    @my_name = nil
   end
   
   def save_battle(battle, me)
     @history << BattleState.new(battle)
-    @my_name = me.username
   end
   
   def save_turn(turn)
@@ -26,7 +24,7 @@ class State
   end
   
   def historical_me(battle)
-    battle.robots.detect { |r| r.username == @my_name }
+    battle.robots.detect { |r| r == me }
   end
   
   def just_hit_me?
